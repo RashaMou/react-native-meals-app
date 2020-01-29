@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import AppNavigator from "./navigation/AppNavigator";
 
 const fetchFonts = () => {
-  Font,
-    loadAsync({
-      "open-sans": require("./assets/fonts/OpenSans-Refular.ttf"),
-      "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf")
-    });
+  return Font.loadAsync({
+    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
+    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf")
+  });
 };
 
 export default function App() {
@@ -23,11 +23,7 @@ export default function App() {
     );
   }
 
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+  return <AppNavigator />;
 }
 
 const styles = StyleSheet.create({
