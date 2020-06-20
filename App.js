@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
-import AppNavigator from "./navigation/AppNavigator";
+import MealsFavTabNavigator from "./navigation/AppNavigator";
+import { enableScreens } from "react-native-screens";
+
+enableScreens();
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -23,7 +26,7 @@ export default function App() {
     );
   }
 
-  return <AppNavigator />;
+  return <MealsFavTabNavigator />;
 }
 
 const styles = StyleSheet.create({
